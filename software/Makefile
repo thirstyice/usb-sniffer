@@ -54,6 +54,7 @@ clean:
 	rm -fr $(BIN)
 
 install: $(BIN)
+	mkdir -p $(EXTCAP_PATH)
 	cp $(BIN) $(EXTCAP_PATH)
 
 prog_eeprom:
@@ -64,5 +65,3 @@ prog_sram:
 
 prog_flash:
 	./usb_sniffer --fpga-flash ../fpga/impl/usb_sniffer_impl.jed
-
-
