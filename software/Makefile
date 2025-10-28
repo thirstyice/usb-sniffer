@@ -55,14 +55,3 @@ clean:
 
 install: $(BIN)
 	cp $(BIN) $(EXTCAP_PATH)
-
-prog_eeprom:
-	./usb_sniffer --mcu-eeprom ../firmware/usb_sniffer.bin
-
-prog_sram:
-	./usb_sniffer --fpga-sram ../fpga/impl/usb_sniffer_impl.bit
-
-prog_flash:
-	./usb_sniffer --fpga-flash ../fpga/impl/usb_sniffer_impl.jed
-
-
