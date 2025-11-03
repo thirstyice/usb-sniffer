@@ -23,7 +23,7 @@ endif
 
 BIN = $(NAME)_$(BIN_OS)$(BIN_EXT)
 
-.PHONY: software firmware fpga install install-udev prog-init prog-eeprom prog-fpga clean
+.PHONY: software firmware fpga install install-udev prog-init prog-eeprom prog-fpga clean test
 
 all: software firmware | fpga
 
@@ -47,6 +47,9 @@ prog-eeprom: software firmware
 
 prog-fpga: software fpga
 	$(OUT_DIR)/$(BIN) --fpga-flash $(NAME)_impl.jed
+
+test: software
+	$(OUT_DIR)/$(BIN) --test
 
 software: $(OUT_DIR)/$(BIN)
 
