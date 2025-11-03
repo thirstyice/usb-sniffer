@@ -46,7 +46,7 @@ prog-eeprom: software firmware
 	$(OUT_DIR)/$(BIN) --mcu-eeprom $(OUT_DIR)/$(NAME).bin
 
 prog-fpga: software fpga
-	$(OUT_DIR)/$(BIN) --fpga-flash $(NAME)_impl.jed
+	$(OUT_DIR)/$(BIN) --fpga-flash $(OUT_DIR)/$(NAME)_impl.jed
 
 test: software
 	$(OUT_DIR)/$(BIN) --test
