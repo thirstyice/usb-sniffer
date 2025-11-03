@@ -36,10 +36,13 @@ install-udev: | $(UDEV_FILE)
 	endif
 
 prog-init: software firmware fpga
+	echo 'Programming SRAM:'
 	$(OUT_DIR)/$(BIN) --mcu-sram $(OUT_DIR)/$(NAME).bin
 	sleep 5
+	echo 'Programming EEPROM:'
 	$(MAKE) prog-eeprom
 	sleep 5
+	echo 'Programming FPGA:'
 	$(MAKE) prog-fpga
 
 prog-eeprom: software firmware
